@@ -1,0 +1,34 @@
+html
+{
+  height:100%;
+}
+body
+{
+  min-height:100%;
+}
+
+.bd-main
+{
+  width:100%;
+  min-height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+}
+.bd-main > *
+{
+  padding:.75em;
+  box-sizing:border-box;
+  display:flex;
+  min-height:100%;
+}
+.bd-main-left
+{
+  flex-grow:5;
+}
+.bd-main-right
+{
+  flex-grow:3;
+  background:rgb(245,245,245);
+}
