@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link rel="stylesheet" href="css/bulma.min.css"/>
+    <title>DnD Soundboard</title>
     <link rel="stylesheet" href="css/styles.css"/>
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
   </head>
   <body>
-    <div class="bd-main">
-      <div class="bd-main-left">
-        
+    <div class="viewport">
+      <div class="bd-main">
+        <!-- Left Panel -->
+        <div class="bd-main-left">
+
+          <!-- Enviroment Selection -->
+          <div id="enviromentSelection" class="bd-envs">
+            <h1 class="bd-envs-current">No Enviroments Loaded</h1>
+            <div class="bd-envs-list">
+              <!-- <div class="item">Enviroment Name</div> -->
+            </div>
+          </div>
+
+          <!-- Enviroment Soundtracks -->
+          <div class="bd-envsounds">
+            <!-- <div class="item">Sound Name</div> -->
+            <div class="nosounds">No Enviroment Sounds Found</div>
+          </div>
+
+        </div>
+        <!-- Right Panel -->
+        <div class="bd-main-right">
+          <div class="bd-amb">
+            <h1 class="bd-amb-title">Ambiences</h1>
+            <div class="bd-amb-list">
+              <!-- <div class="item">Sound Name</div> -->
+              <div class="nosounds">No Ambiences Available</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="bd-main-right"></div>
     </div>
+    <div class="ft-player">
+      <div class="ft-player-status">
+        <img src="img/play.png"/>
+        <img src="img/pause.png"/>
+      </div>
+      <div class="ft-player-current">No Sound Set</div>
+    </div>
+
+    <script src="js/music-script.js"></script>
   </body>
 </html>
