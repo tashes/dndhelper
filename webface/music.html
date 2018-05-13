@@ -13,14 +13,14 @@
 
           <!-- Enviroment Selection -->
           <div id="enviromentSelection" class="bd-envs">
-            <h1 class="bd-envs-current">No Enviroments Loaded</h1>
-            <div class="bd-envs-list">
+            <h1 id="enviromentSelection_title" class="bd-envs-current">No Enviroments Loaded</h1>
+            <div id="enviromentSelection_list" class="bd-envs-list">
               <!-- <div class="item">Enviroment Name</div> -->
             </div>
           </div>
 
           <!-- Enviroment Soundtracks -->
-          <div class="bd-envsounds">
+          <div id="enviromentSounds" class="bd-envsounds">
             <!-- <div class="item">Sound Name</div> -->
             <div class="nosounds">No Enviroment Sounds Found</div>
           </div>
@@ -30,7 +30,7 @@
         <div class="bd-main-right">
           <div class="bd-amb">
             <h1 class="bd-amb-title">Ambiences</h1>
-            <div class="bd-amb-list">
+            <div id="ambience" class="bd-amb-list">
               <!-- <div class="item">Sound Name</div> -->
               <div class="nosounds">No Ambiences Available</div>
             </div>
@@ -38,14 +38,18 @@
         </div>
       </div>
     </div>
-    <div class="ft-player">
-      <div class="ft-player-status">
+    <div id="player" class="ft-player">
+      <div id="player_button" class="ft-player-status">
         <img src="img/play.png"/>
         <img src="img/pause.png"/>
       </div>
-      <div class="ft-player-current">No Sound Set</div>
+      <div id="player_time" class="ft-player-time">--:--</div>
+      <div id="player_current" class="ft-player-current">No Sound Set</div>
     </div>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/moment-duration-format.js"></script>
     <script src="js/music-script.js"></script>
   </body>
 </html>
