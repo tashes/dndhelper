@@ -92,6 +92,17 @@ function listAmbiences () {
     }
   }).map(m => /([a-zA-Z0-9 -]+)\.mp3/.exec(m)[1]);
 };
+function listCards () {
+  return fs.readdirSync('./cards').map(m => {
+    if (fs.statSync('./cards/' + m).isFile() && mime.getType('./cards/' + m).indexOf('image') > -1) {
+      let p = /([a-zA-Z0-9\-() ]+|\s+)\.(jpg|jpeg|png)/g.exec(m);
+      return {
+        name: p[1],
+        ext: p[2]
+      };
+    }
+  }).filter(r => r);
+}
 
 let specials = [];
 const server = http.createServer(function (req, res) {
@@ -141,6 +152,7 @@ io.on('connection', function (socket) {
   let socketspecials = [];
   socket.emit('sounds', listSounds());
   socket.emit('ambiences', listAmbiences());
+  socket.emit('cards', listCards());
   socket.on('sound', function (data) {
     let folder = data.split("::::")[0];
     let name = data.split("::::")[1];
@@ -166,6 +178,14 @@ io.on('connection', function (socket) {
         sound: id
       });
     }, 100);
+  });
+  socket.on('card', function (data) {
+    let name = data;
+    let id = addSpecial('./cards/' + name);
+    socketspecials.push(id);
+    setTimeout(() => {
+      socket.emit('card', id)
+    });
   });
   socket.on('disconnected', function () {
     socketspecials.forEach(id => {

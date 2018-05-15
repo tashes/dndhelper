@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link rel="stylesheet" href="css/bulma.min.css"/>
+    <title>DnD Cards</title>
     <link rel="stylesheet" href="css/styles.css"/>
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
   </head>
   <body>
-    <div id="viewport">
+    <div class="viewport">
+      <div class="bd-main">
+        <!-- Left Panel -->
+        <div class="bd-main-left">
 
+          <div id="list" class="bd-list">
+            <!-- <div class="item">Card Name</div> -->
+            <div class="nosounds">No Cards Available</div>
+          </div>
+
+        </div>
+        <!-- Right Panel -->
+        <div class="bd-main-right"><img id="card" class="bd-card" src=""/></div>
+      </div>
+      <a href="./music.html" target="_blank" class="tomusic">-></a>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/draggable.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
